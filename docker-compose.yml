@@ -6,7 +6,7 @@ services:
     depends_on:
       - api
     ports:
-      - "80:80"
+      - "8000:80"
     volumes:
       - ./website:/var/www/html
     environment:
@@ -19,9 +19,9 @@ services:
     image: pozos_image:latest
     container_name: pozos_api
     ports:
-      - "5000:5000"
+      - "5001:5000"
     volumes:
-      - ${PWD}:/data
+      - .:/data
     networks:
       - pozos_network
 networks:
